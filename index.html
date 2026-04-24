@@ -4,8 +4,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Professional Portfolio of a Web Developer, Designer, and ML Enthusiast.">
-    <title>Professional Portfolio</title>
+    
+    <!-- Primary Meta Tags -->
+    <title>Chinmaya | Professional Portfolio</title>
+    <meta name="title" content="Chinmaya | Professional Portfolio">
+    <meta name="description" content="Professional Portfolio of Chinmaya, a Web Developer, Designer, and ML Enthusiast. Explore my projects, skills, and experience.">
+    <meta name="keywords" content="Chinmaya, Portfolio, Web Developer, Machine Learning, UI/UX Designer, HTML, CSS, JavaScript, Python">
+    <meta name="author" content="Chinmaya">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://your-portfolio.netlify.app/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-portfolio.netlify.app/">
+    <meta property="og:title" content="Chinmaya | Professional Portfolio">
+    <meta property="og:description" content="Professional Portfolio of Chinmaya, a Web Developer, Designer, and ML Enthusiast. Explore my projects, skills, and experience.">
+    <meta property="og:image" content="https://your-portfolio.netlify.app/profile.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://your-portfolio.netlify.app/">
+    <meta property="twitter:title" content="Chinmaya | Professional Portfolio">
+    <meta property="twitter:description" content="Professional Portfolio of Chinmaya, a Web Developer, Designer, and ML Enthusiast. Explore my projects, skills, and experience.">
+    <meta property="twitter:image" content="https://your-portfolio.netlify.app/profile.png">
+
+    <!-- JSON-LD Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "Person",
+      "name": "Chinmaya",
+      "url": "https://your-portfolio.netlify.app/",
+      "image": "https://your-portfolio.netlify.app/profile.png",
+      "sameAs": [
+        "https://www.linkedin.com/",
+        "https://github.com/chinmayhandi",
+        "https://twitter.com/",
+        "https://www.instagram.com/chinmay__handi/"
+      ],
+      "jobTitle": "Web Developer & ML Enthusiast",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Karnataka",
+        "addressCountry": "India"
+      },
+      "alumniOf": "BVVS Polytechnic (Autonomous), Bagalkot"
+    }
+    </script>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,11 +68,10 @@
 
 <body>
 
-
     <!-- Navigation -->
     <nav id="navbar">
         <div class="nav-container">
-            <a href="#home" class="logo">Port<span>folio.</span></a>
+            <a href="#home" class="logo" aria-label="Go to home">Port<span>folio.</span></a>
             <div class="nav-links">
                 <a href="#home" class="active">Home</a>
                 <a href="#about">About</a>
@@ -37,7 +81,7 @@
                 <a href="#certificates">Certificates</a>
                 <a href="#contact">Contact</a>
             </div>
-            <div class="hamburger">
+            <div class="hamburger" aria-label="Toggle Navigation Menu" role="button" tabindex="0">
                 <i class="fas fa-bars"></i>
             </div>
         </div>
@@ -48,27 +92,28 @@
         <div class="particles" id="particles"></div>
         <div class="hero-content">
             <div class="hero-text" class="reveal">
-                <h3>Hello, I'm</h3>
+                <p class="greeting">Hello, I'm</p>
+                <!-- Only ONE H1 tag for SEO -->
                 <h1 class="name-title">Chinmaya</h1>
                 <h2 class="professional-tagline">I am a <span class="typing-text"></span></h2>
                 <p>Building high-quality, scalable, and premium digital experiences. Passionate about Artificial
                     Intelligence, Modern Web Development, and creating solutions that make an impact.</p>
                 <div class="hero-buttons">
-                    <a href="resume.pdf" download class="btn btn-primary">Download Resume <i
+                    <a href="resume.pdf" download class="btn btn-primary" aria-label="Download my resume">Download Resume <i
                             class="fas fa-download"></i></a>
-                    <a href="#contact" class="btn btn-secondary">Contact Me <i class="fas fa-paper-plane"></i></a>
-                    <a href="#projects" class="btn btn-outline">View Projects</a>
+                    <a href="#contact" class="btn btn-secondary" aria-label="Scroll to contact section">Contact Me <i class="fas fa-paper-plane"></i></a>
+                    <a href="#projects" class="btn btn-outline" aria-label="Scroll to projects section">View Projects</a>
                 </div>
                 <div class="hero-socials">
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-github"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="https://www.instagram.com/chinmay__handi/"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/chinmayhandi" aria-label="GitHub Profile"><i class="fab fa-github"></i></a>
+                    <a href="#" aria-label="Twitter Profile"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/chinmay__handi/" aria-label="Instagram Profile"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
             <div class="hero-image" class="reveal">
                 <div class="img-box">
-                    <img src="profile.png" alt="Professional Photo" onerror="this.src='profile.png'">at
+                    <img src="profile.png" alt="Chinmaya - Professional Web Developer and Designer" width="400" height="500" loading="eager" onerror="this.src='profile.png'">
                 </div>
             </div>
         </div>
@@ -92,22 +137,22 @@
             </div>
             <div class="about-highlights reveal">
                 <div class="highlight-card glass-card">
-                    <i class="fas fa-briefcase"></i>
+                    <i class="fas fa-briefcase" aria-hidden="true"></i>
                     <h4>Experience</h4>
                     <p>2+ Years</p>
                 </div>
                 <div class="highlight-card glass-card">
-                    <i class="fas fa-project-diagram"></i>
+                    <i class="fas fa-project-diagram" aria-hidden="true"></i>
                     <h4>Projects</h4>
                     <p>15+ Completed</p>
                 </div>
                 <div class="highlight-card glass-card">
-                    <i class="fas fa-certificate"></i>
+                    <i class="fas fa-certificate" aria-hidden="true"></i>
                     <h4>Certificates</h4>
                     <p>10+ Earned</p>
                 </div>
                 <div class="highlight-card glass-card">
-                    <i class="fas fa-users"></i>
+                    <i class="fas fa-users" aria-hidden="true"></i>
                     <h4>Clients</h4>
                     <p>10+ Happy</p>
                 </div>
@@ -124,70 +169,70 @@
         <div class="skills-container reveal">
             <!-- Skill Items -->
             <div class="skill-card glass-card">
-                <i class="fab fa-html5 skill-icon" style="color: #E34F26;"></i>
+                <i class="fab fa-html5 skill-icon" style="color: #E34F26;" aria-hidden="true"></i>
                 <h4>HTML5</h4>
                 <div class="progress-bar">
                     <div class="progress" style="width: 95%;"></div>
                 </div>
             </div>
             <div class="skill-card glass-card">
-                <i class="fab fa-css3-alt skill-icon" style="color: #1572B6;"></i>
+                <i class="fab fa-css3-alt skill-icon" style="color: #1572B6;" aria-hidden="true"></i>
                 <h4>CSS3</h4>
                 <div class="progress-bar">
                     <div class="progress" style="width: 90%;"></div>
                 </div>
             </div>
             <div class="skill-card glass-card">
-                <i class="fab fa-js skill-icon" style="color: #F7DF1E;"></i>
+                <i class="fab fa-js skill-icon" style="color: #F7DF1E;" aria-hidden="true"></i>
                 <h4>JavaScript</h4>
                 <div class="progress-bar">
                     <div class="progress" style="width: 85%;"></div>
                 </div>
             </div>
             <div class="skill-card glass-card">
-                <i class="fab fa-python skill-icon" style="color: #3776AB;"></i>
+                <i class="fab fa-python skill-icon" style="color: #3776AB;" aria-hidden="true"></i>
                 <h4>Python</h4>
                 <div class="progress-bar">
                     <div class="progress" style="width: 80%;"></div>
                 </div>
             </div>
             <div class="skill-card glass-card">
-                <i class="fas fa-pepper-hot skill-icon" style="color: #000000;"></i>
+                <i class="fas fa-pepper-hot skill-icon" style="color: #000000;" aria-hidden="true"></i>
                 <h4>Flask</h4>
                 <div class="progress-bar">
                     <div class="progress" style="width: 75%;"></div>
                 </div>
             </div>
             <div class="skill-card glass-card">
-                <i class="fas fa-brain skill-icon" style="color: #FF6F00;"></i>
+                <i class="fas fa-brain skill-icon" style="color: #FF6F00;" aria-hidden="true"></i>
                 <h4>Machine Learning</h4>
                 <div class="progress-bar">
                     <div class="progress" style="width: 70%;"></div>
                 </div>
             </div>
             <div class="skill-card glass-card">
-                <i class="fas fa-database skill-icon" style="color: #3ECF8E;"></i>
+                <i class="fas fa-database skill-icon" style="color: #3ECF8E;" aria-hidden="true"></i>
                 <h4>Supabase</h4>
                 <div class="progress-bar">
                     <div class="progress" style="width: 80%;"></div>
                 </div>
             </div>
             <div class="skill-card glass-card">
-                <i class="fas fa-paint-brush skill-icon" style="color: #FF00FF;"></i>
+                <i class="fas fa-paint-brush skill-icon" style="color: #FF00FF;" aria-hidden="true"></i>
                 <h4>UI/UX Design</h4>
                 <div class="progress-bar">
                     <div class="progress" style="width: 85%;"></div>
                 </div>
             </div>
             <div class="skill-card glass-card">
-                <i class="fas fa-laptop-code skill-icon" style="color: #00FFFF;"></i>
+                <i class="fas fa-laptop-code skill-icon" style="color: #00FFFF;" aria-hidden="true"></i>
                 <h4>Web Development</h4>
                 <div class="progress-bar">
                     <div class="progress" style="width: 90%;"></div>
                 </div>
             </div>
             <div class="skill-card glass-card">
-                <i class="fas fa-server skill-icon" style="color: #00C7B7;"></i>
+                <i class="fas fa-server skill-icon" style="color: #00C7B7;" aria-hidden="true"></i>
                 <h4>Netlify Deploy</h4>
                 <div class="progress-bar">
                     <div class="progress" style="width: 95%;"></div>
@@ -234,7 +279,7 @@
             <!-- Project 1 -->
             <div class="project-card glass-card">
                 <div class="project-img">
-                    <img src="project1.jpg" alt="AI Traffic Prediction"
+                    <img src="project1.jpg" alt="AI Traffic Accident Prediction Machine Learning Dashboard" width="600" height="400" loading="lazy"
                         onerror="this.src='https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=600&auto=format&fit=crop'">
                 </div>
                 <div class="project-info">
@@ -243,13 +288,13 @@
                     <div class="tech-tags">
                         <span>Python</span> <span>ML</span> <span>Flask</span>
                     </div>
-                    <a href="#" class="btn btn-outline btn-sm">View Project <i class="fas fa-external-link-alt"></i></a>
+                    <a href="#" class="btn btn-outline btn-sm" aria-label="View AI Traffic Prediction Project">View Project <i class="fas fa-external-link-alt"></i></a>
                 </div>
             </div>
             <!-- Project 2 -->
             <div class="project-card glass-card">
                 <div class="project-img">
-                    <img src="project2.jpg" alt="Ecommerce Gifts"
+                    <img src="project2.jpg" alt="SK Studio Traditional E-commerce Website Platform" width="600" height="400" loading="lazy"
                         onerror="this.src='https://images.unsplash.com/photo-1549465220-1a8b9238cd48?q=80&w=600&auto=format&fit=crop'">
                 </div>
                 <div class="project-info">
@@ -258,13 +303,13 @@
                     <div class="tech-tags">
                         <span>HTML/CSS/JS</span> <span>Supabase</span>
                     </div>
-                    <a href="#" class="btn btn-outline btn-sm">View Project <i class="fas fa-external-link-alt"></i></a>
+                    <a href="#" class="btn btn-outline btn-sm" aria-label="View SK Studio Gifts Project">View Project <i class="fas fa-external-link-alt"></i></a>
                 </div>
             </div>
             <!-- Project 3 -->
             <div class="project-card glass-card">
                 <div class="project-img">
-                    <img src="project3.jpg" alt="Construction Website"
+                    <img src="project3.jpg" alt="Construction Company Modern Website Design" width="600" height="400" loading="lazy"
                         onerror="this.src='https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=600&auto=format&fit=crop'">
                 </div>
                 <div class="project-info">
@@ -273,13 +318,13 @@
                     <div class="tech-tags">
                         <span>Responsive UI</span> <span>Design</span>
                     </div>
-                    <a href="#" class="btn btn-outline btn-sm">View Project <i class="fas fa-external-link-alt"></i></a>
+                    <a href="#" class="btn btn-outline btn-sm" aria-label="View Construction Company Site Project">View Project <i class="fas fa-external-link-alt"></i></a>
                 </div>
             </div>
             <!-- Project 4 -->
             <div class="project-card glass-card">
                 <div class="project-img">
-                    <img src="project1.jpg" alt="Coaching Center"
+                    <img src="project1.jpg" alt="Unics Coaching Center Educational Website" width="600" height="400" loading="lazy"
                         onerror="this.src='https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=600&auto=format&fit=crop'">
                 </div>
                 <div class="project-info">
@@ -288,13 +333,13 @@
                     <div class="tech-tags">
                         <span>JS Validation</span> <span>WhatsApp API</span>
                     </div>
-                    <a href="#" class="btn btn-outline btn-sm">View Project <i class="fas fa-external-link-alt"></i></a>
+                    <a href="#" class="btn btn-outline btn-sm" aria-label="View Unics Coaching Centre Project">View Project <i class="fas fa-external-link-alt"></i></a>
                 </div>
             </div>
             <!-- Project 5 -->
             <div class="project-card glass-card">
                 <div class="project-img">
-                    <img src="project2.jpg" alt="Embroidery Business"
+                    <img src="project2.jpg" alt="Embroidery Business Portfolio Site" width="600" height="400" loading="lazy"
                         onerror="this.src='https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?q=80&w=600&auto=format&fit=crop'">
                 </div>
                 <div class="project-info">
@@ -303,13 +348,13 @@
                     <div class="tech-tags">
                         <span>CSS Animations</span> <span>Modern UI</span>
                     </div>
-                    <a href="#" class="btn btn-outline btn-sm">View Project <i class="fas fa-external-link-alt"></i></a>
+                    <a href="#" class="btn btn-outline btn-sm" aria-label="View Embroidery Business Site Project">View Project <i class="fas fa-external-link-alt"></i></a>
                 </div>
             </div>
             <!-- Project 6 -->
             <div class="project-card glass-card">
                 <div class="project-img">
-                    <img src="project3.jpg" alt="Portfolio"
+                    <img src="project3.jpg" alt="Advanced Responsive Personal Portfolio Website" width="600" height="400" loading="lazy"
                         onerror="this.src='https://images.unsplash.com/photo-1481481833547-b8f416c1410f?q=80&w=600&auto=format&fit=crop'">
                 </div>
                 <div class="project-info">
@@ -318,7 +363,7 @@
                     <div class="tech-tags">
                         <span>HTML/CSS/JS</span> <span>Glassmorphism</span>
                     </div>
-                    <a href="#" class="btn btn-outline btn-sm">View Project <i class="fas fa-external-link-alt"></i></a>
+                    <a href="#" class="btn btn-outline btn-sm" aria-label="View Advanced Portfolio Project">View Project <i class="fas fa-external-link-alt"></i></a>
                 </div>
             </div>
         </div>
@@ -335,10 +380,10 @@
             <!-- Certificate 1 -->
             <div class="cert-card glass-card">
                 <div class="cert-img-container">
-                    <img src="certificate1.jpg" alt="Certificate 1" class="cert-img"
+                    <img src="certificate1.jpg" alt="Web Development Bootcamp Certificate of Completion" width="400" height="300" loading="lazy" class="cert-img"
                         onerror="this.src='https://images.unsplash.com/photo-1589330694653-ded6df03f754?q=80&w=600&auto=format&fit=crop'">
                     <div class="cert-overlay">
-                        <button class="view-cert-btn"
+                        <button class="view-cert-btn" aria-label="View Certificate: Web Development Bootcamp"
                             onclick="openModal(this.previousElementSibling.previousElementSibling.src)">
                             <i class="fas fa-search-plus"></i> View
                         </button>
@@ -352,10 +397,10 @@
             <!-- Certificate 2 -->
             <div class="cert-card glass-card">
                 <div class="cert-img-container">
-                    <img src="certificate2.jpg" alt="Certificate 2" class="cert-img"
+                    <img src="certificate2.jpg" alt="Machine Learning A-Z Certificate of Completion" width="400" height="300" loading="lazy" class="cert-img"
                         onerror="this.src='https://images.unsplash.com/photo-1589330694653-ded6df03f754?q=80&w=600&auto=format&fit=crop'">
                     <div class="cert-overlay">
-                        <button class="view-cert-btn"
+                        <button class="view-cert-btn" aria-label="View Certificate: Machine Learning A-Z"
                             onclick="openModal(this.parentElement.previousElementSibling.src)">
                             <i class="fas fa-search-plus"></i> View
                         </button>
@@ -369,10 +414,10 @@
             <!-- Certificate 3 -->
             <div class="cert-card glass-card">
                 <div class="cert-img-container">
-                    <img src="certificate3.jpg" alt="Certificate 3" class="cert-img"
+                    <img src="certificate3.jpg" alt="Python for Data Science Certificate of Completion" width="400" height="300" loading="lazy" class="cert-img"
                         onerror="this.src='https://images.unsplash.com/photo-1589330694653-ded6df03f754?q=80&w=600&auto=format&fit=crop'">
                     <div class="cert-overlay">
-                        <button class="view-cert-btn"
+                        <button class="view-cert-btn" aria-label="View Certificate: Python for Data Science"
                             onclick="openModal(this.parentElement.previousElementSibling.src)">
                             <i class="fas fa-search-plus"></i> View
                         </button>
@@ -387,19 +432,19 @@
 
         <div class="resume-section reveal" id="resume">
             <div class="resume-card glass-card">
-                <i class="fas fa-file-pdf resume-icon"></i>
+                <i class="fas fa-file-pdf resume-icon" aria-hidden="true"></i>
                 <h3>Professional Resume</h3>
                 <p>Download my full resume to see more details about my qualifications, experience, and skills.</p>
-                <a href="resume.pdf" download class="btn btn-primary">Download Resume <i
+                <a href="resume.pdf" download class="btn btn-primary" aria-label="Download Chinmaya's Resume PDF">Download Resume <i
                         class="fas fa-download"></i></a>
             </div>
         </div>
     </section>
 
     <!-- Certificate Modal -->
-    <div id="certModal" class="modal">
-        <span class="close-modal">&times;</span>
-        <img class="modal-content" id="modalImg">
+    <div id="certModal" class="modal" role="dialog" aria-modal="true" aria-label="Certificate Image Viewer">
+        <span class="close-modal" aria-label="Close modal" tabindex="0">&times;</span>
+        <img class="modal-content" id="modalImg" alt="Full screen certificate view">
     </div>
 
     <!-- Contact Section -->
@@ -415,21 +460,21 @@
                 <p>Feel free to reach out for collaborations, project inquiries, or just to say hi!</p>
 
                 <div class="info-item">
-                    <i class="fas fa-phone-alt"></i>
+                    <i class="fas fa-phone-alt" aria-hidden="true"></i>
                     <div>
                         <h4>Call Me</h4>
                         <p>+91 6364156092</p>
                     </div>
                 </div>
                 <div class="info-item">
-                    <i class="fas fa-envelope"></i>
+                    <i class="fas fa-envelope" aria-hidden="true"></i>
                     <div>
                         <h4>Email</h4>
                         <p>chinmayahandi2007@gmail.com</p>
                     </div>
                 </div>
                 <div class="info-item">
-                    <i class="fas fa-map-marker-alt"></i>
+                    <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
                     <div>
                         <h4>Location</h4>
                         <p>Karnataka, India</p>
@@ -437,9 +482,8 @@
                 </div>
 
                 <div class="contact-buttons">
-                    <a href="tel:+916364156092" class="btn btn-outline"><i class="fas fa-phone-volume"></i> Call Now</a>
-                    <a href="mailto:chinmayahandi2007@gmail.com" class="btn btn-outline"><i class="fas fa-envelope"></i>
-                        Email</a>
+                    <a href="tel:+916364156092" class="btn btn-outline" aria-label="Call Chinmaya directly"><i class="fas fa-phone-volume"></i> Call Now</a>
+                    <a href="mailto:chinmayahandi2007@gmail.com" class="btn btn-outline" aria-label="Email Chinmaya directly"><i class="fas fa-envelope"></i> Email</a>
                 </div>
             </div>
 
@@ -447,19 +491,19 @@
                 <h3>Send a Message</h3>
                 <form id="contactForm">
                     <div class="input-group">
-                        <input type="text" id="name" required placeholder="Your Name">
+                        <input type="text" id="name" required placeholder="Your Name" aria-label="Your Name">
                     </div>
                     <div class="input-group">
                         <input type="tel" id="phone" required placeholder="Your Phone (10 digits)" pattern="[0-9]{10}"
-                            maxlength="10">
+                            maxlength="10" aria-label="Your Phone Number">
                     </div>
                     <div class="input-group">
-                        <input type="text" id="subject" required placeholder="Subject">
+                        <input type="text" id="subject" required placeholder="Subject" aria-label="Message Subject">
                     </div>
                     <div class="input-group">
-                        <textarea id="message" rows="5" required placeholder="Your Message"></textarea>
+                        <textarea id="message" rows="5" required placeholder="Your Message" aria-label="Your Message"></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary w-100">Send via WhatsApp <i
+                    <button type="submit" class="btn btn-primary w-100" aria-label="Send message via WhatsApp">Send via WhatsApp <i
                             class="fab fa-whatsapp"></i></button>
                 </form>
             </div>
@@ -485,10 +529,10 @@
             <div class="footer-social">
                 <h3>Follow Me</h3>
                 <div class="social-icons">
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-github"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="https://www.instagram.com/chinmay__handi/"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/chinmayhandi" aria-label="GitHub Profile"><i class="fab fa-github"></i></a>
+                    <a href="#" aria-label="Twitter Profile"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/chinmay__handi/" aria-label="Instagram Profile"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
         </div>
@@ -498,11 +542,11 @@
     </footer>
 
     <!-- Floating WhatsApp & Back to Top -->
-    <a href="https://wa.me/916364156092" target="_blank" class="floating-whatsapp">
+    <a href="https://wa.me/916364156092" target="_blank" class="floating-whatsapp" aria-label="Chat with me on WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <a href="#home" class="back-to-top">
+    <a href="#home" class="back-to-top" aria-label="Scroll back to top">
         <i class="fas fa-arrow-up"></i>
     </a>
 
