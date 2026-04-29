@@ -340,6 +340,13 @@ img {
     font-size: 1.1rem;
 }
 
+.local-seo-text {
+    margin-top: 15px;
+    font-weight: 500;
+    color: var(--gold);
+    font-size: 1.05rem;
+}
+
 .hero-buttons {
     display: flex;
     gap: 15px;
@@ -1106,6 +1113,13 @@ footer {
     .timeline-item {
         padding-left: 50px;
     }
+}
+
+.footer-seo {
+    margin-top: 8px;
+    font-size: 0.9rem;
+    color: var(--text-gray);
+    font-weight: 400;
 }
 
 @media (max-width: 480px) {
