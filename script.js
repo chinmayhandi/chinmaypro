@@ -49,7 +49,7 @@ const sections = document.querySelectorAll('section, header');
 
 window.addEventListener('scroll', () => {
     let current = '';
-    
+
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
@@ -93,7 +93,7 @@ let isDeleting = false;
 
 function typeEffect() {
     const currentRole = roles[roleIndex];
-    
+
     if (isDeleting) {
         typingText.textContent = currentRole.substring(0, charIndex - 1);
         charIndex--;
@@ -131,27 +131,29 @@ function openModal(imgSrc) {
     document.body.style.overflow = "hidden";
 }
 
-closeBtn.onclick = function() {
+closeBtn.onclick = function () {
     modal.style.display = "none";
     document.body.style.overflow = "auto";
 }
 
-window.onclick = function(event) {
+window.onclick = function (event) {
     if (event.target == modal) {
         modal.style.display = "none";
         document.body.style.overflow = "auto";
     }
 }
 
-// --- Contact Form to WhatsApp ---
+// --- Contact Form to Email via Web3Forms ---
 const contactForm = document.getElementById('contactForm');
+const formResult = document.getElementById('formResult');
+const submitBtn = document.getElementById('submitBtn');
 
-contactForm.addEventListener('submit', function(e) {
+contactForm.addEventListener('submit', function (e) {
     e.preventDefault();
-    
+
     const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
     const phone = document.getElementById('phone').value;
-    const subject = document.getElementById('subject').value;
     const message = document.getElementById('message').value;
 
     // Validate phone number (10 digits)
@@ -161,20 +163,62 @@ contactForm.addEventListener('submit', function(e) {
         return;
     }
 
-    // Default WhatsApp number (Replace with your actual number)
-    const waNumber = "916364156092"; 
-    
-    // Format message
-    const formattedMessage = `*New Contact Inquiry*%0A%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Subject:* ${subject}%0A*Message:* ${message}`;
-    
-    // Create WhatsApp URL
-    const waUrl = `https://wa.me/${waNumber}?text=${formattedMessage}`;
-    
-    // Open in new tab
-    window.open(waUrl, '_blank');
-    
-    // Reset form
-    contactForm.reset();
+    // Setup UI for loading state
+    const originalBtnText = submitBtn.innerHTML;
+    submitBtn.innerHTML = 'Sending... <i class="fas fa-spinner fa-spin"></i>';
+    submitBtn.disabled = true;
+    formResult.style.display = "none";
+
+    // IMPORTANT: Replace with your actual Web3Forms Access Key
+    // Get your free key from https://web3forms.com/
+    const ACCESS_KEY = "b4008b51-a52b-4f03-9f40-4f7de462870d";
+
+    const formData = {
+        access_key: ACCESS_KEY,
+        name: name,
+        email: email,
+        phone: phone,
+        message: message,
+        subject: "New Contact Form Submission from " + name
+    };
+
+    fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json"
+        },
+        body: JSON.stringify(formData)
+    })
+        .then(async (response) => {
+            let json = await response.json();
+            if (response.status == 200) {
+                formResult.innerHTML = "Message sent successfully ✅";
+                formResult.style.color = "#3ECF8E"; // Success green matching the theme
+                formResult.style.display = "block";
+                contactForm.reset();
+            } else {
+                console.log(response);
+                formResult.innerHTML = json.message || "Failed to send message ❌";
+                formResult.style.color = "#E34F26"; // Error red
+                formResult.style.display = "block";
+            }
+        })
+        .catch((error) => {
+            console.log(error);
+            formResult.innerHTML = "Something went wrong! ❌";
+            formResult.style.color = "#E34F26"; // Error red
+            formResult.style.display = "block";
+        })
+        .finally(() => {
+            submitBtn.innerHTML = originalBtnText;
+            submitBtn.disabled = false;
+
+            // Hide message after 5 seconds
+            setTimeout(() => {
+                formResult.style.display = "none";
+            }, 5000);
+        });
 });
 
 // --- Particles Background (Simple CSS based implementation via JS) ---
@@ -185,7 +229,7 @@ function createParticles() {
     for (let i = 0; i < particleCount; i++) {
         const particle = document.createElement('div');
         particle.classList.add('particle');
-        
+
         // Random styles
         const size = Math.random() * 5 + 2;
         const xPos = Math.random() * 100;
@@ -204,9 +248,9 @@ function createParticles() {
             top: ${yPos}%;
             opacity: ${opacity};
             animation: float ${animationDuration}s ${animationDelay}s infinite linear;
-            box-shadow: 0 0 ${size*2}px var(--gold);
+            box-shadow: 0 0 ${size * 2}px var(--gold);
         `;
-        
+
         particlesContainer.appendChild(particle);
     }
 }
