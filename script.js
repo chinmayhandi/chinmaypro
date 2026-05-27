@@ -1,20 +1,7 @@
-// --- Sticky Navbar & Back to Top ---
+// --- Core Elements ---
 const navbar = document.getElementById('navbar');
 const backToTop = document.querySelector('.back-to-top');
-
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
-    }
-
-    if (window.scrollY > 500) {
-        backToTop.classList.add('active');
-    } else {
-        backToTop.classList.remove('active');
-    }
-});
+const sections = document.querySelectorAll('section, header');
 
 // --- Mobile Hamburger Menu ---
 const hamburger = document.querySelector('.hamburger');
@@ -44,26 +31,17 @@ navItems.forEach(item => {
     });
 });
 
-// --- Active Link Switching on Scroll ---
-const sections = document.querySelectorAll('section, header');
+// Close mobile menu when clicking outside of it
+document.addEventListener('click', (event) => {
+    const isClickInsideMenu = navLinks.contains(event.target);
+    const isClickOnHamburger = hamburger.contains(event.target);
 
-window.addEventListener('scroll', () => {
-    let current = '';
-
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
-            current = section.getAttribute('id');
-        }
-    });
-
-    navItems.forEach(a => {
-        a.classList.remove('active');
-        if (a.getAttribute('href').includes(current)) {
-            a.classList.add('active');
-        }
-    });
+    if (navLinks.classList.contains('active') && !isClickInsideMenu && !isClickOnHamburger) {
+        navLinks.classList.remove('active');
+        const icon = hamburger.querySelector('i');
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+    }
 });
 
 // --- Scroll Reveal Animations ---
@@ -81,8 +59,51 @@ function reveal() {
     }
 }
 
-window.addEventListener("scroll", reveal);
-reveal(); // Trigger on load
+// --- Combined Scroll, Load, & Resize Behaviors ---
+function updateScrollBehaviors() {
+    // 1. Sticky Navbar
+    if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+
+    // 2. Back to Top Button Visibility
+    if (window.scrollY > 500) {
+        backToTop.classList.add('active');
+    } else {
+        backToTop.classList.remove('active');
+    }
+
+    // 3. Active Nav Link Switching
+    let current = '';
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (window.scrollY >= (sectionTop - sectionHeight / 3)) {
+            current = section.getAttribute('id');
+        }
+    });
+
+    navItems.forEach(a => {
+        a.classList.remove('active');
+        if (current && a.getAttribute('href').includes(current)) {
+            a.classList.add('active');
+        }
+    });
+
+    // 4. Scroll Reveal Trigger
+    reveal();
+}
+
+// Bind scroll, load and resize events to the unified controller
+window.addEventListener('scroll', updateScrollBehaviors);
+window.addEventListener('resize', updateScrollBehaviors);
+window.addEventListener('load', updateScrollBehaviors);
+document.addEventListener('DOMContentLoaded', updateScrollBehaviors);
+
+// Run scroll behaviors immediately on execution to handle current scroll state
+updateScrollBehaviors();
 
 // --- Typing Animation ---
 const typingText = document.querySelector('.typing-text');
@@ -119,29 +140,7 @@ function typeEffect() {
 // Start typing effect after a small delay
 setTimeout(typeEffect, 1500);
 
-// --- Certificate Modal ---
-const modal = document.getElementById("certModal");
-const modalImg = document.getElementById("modalImg");
-const closeBtn = document.querySelector(".close-modal");
 
-function openModal(imgSrc) {
-    modal.style.display = "block";
-    modalImg.src = imgSrc;
-    // Prevent scrolling behind modal
-    document.body.style.overflow = "hidden";
-}
-
-closeBtn.onclick = function () {
-    modal.style.display = "none";
-    document.body.style.overflow = "auto";
-}
-
-window.onclick = function (event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-        document.body.style.overflow = "auto";
-    }
-}
 
 // --- Contact Form to Email via Web3Forms ---
 const contactForm = document.getElementById('contactForm');
